@@ -49,7 +49,8 @@ return packer.startup(function(use)
   use "lewis6991/gitsigns.nvim" -- git changese 
   use 'nvim-lualine/lualine.nvim' -- status bar
   use "akinsho/toggleterm.nvim" -- terminal within nvim
-
+  use "folke/which-key.nvim" -- keybinding popup 
+  use "ggandor/leap.nvim" -- vim leap for faster moving  
   -- Colorschemes
   use "navarasu/onedark.nvim"
   use "folke/tokyonight.nvim"

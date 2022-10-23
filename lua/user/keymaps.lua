@@ -78,11 +78,13 @@ keymap("n", "<leader>q", ":Bdelete!<CR>", opts)
 
 -- Plugins --
 -- keymap("n", "<leader>f", "<cmd>Telescope find_files<cr>", opts)
-keymap("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
-keymap("n", "<c-t>", "<cmd>Telescope live_grep<cr>", opts)
+keymap("n", "<leader>ff", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
+keymap("n", "<leader>ft", ":Telescope live_grep<CR>", opts)
+keymap("n", "<leader>fp", ":Telescope projects<CR>", opts)
+keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
 
 -- Nvimtree
 keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
--- Toggle Terminal - Git/Htop; use Ctrl instead of leader as you cant minimize the terminal properly
-keymap("n", "<C-g>", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
-keymap("n", "<C-1>", "<cmd>lua _HTOP_TOGGLE()<CR>", opts)
+-- Toggle Terminal - Git/Htop
+keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
+keymap("n", "<C-1>", "<cmd>lua _HTOP_TOGGLE()<CR>", opts) -- dont use leader as you can't minimize

@@ -13,3 +13,6 @@ require "user.nvim-tree"
 require "user.bufferline"
 require "user.toggle-terminal"
 require "user.lualine"
+-- need to change the keybinding
+-- require("user.whichkey")
+require("user.leap")
