@@ -76,6 +76,10 @@ keymap("v", "<leader>d", '"_d', opts)
 -- close buffer alone
 keymap("n", "<leader>q", ":Bdelete!<CR>", opts)
 
+-- quitall the buffers and nvim
+keymap("n", "<leader>Q!", ":quitall<CR>", opts)
+keymap("v", "<leader>Q!", ":quitall<CR>", opts)
+
 -- Plugins --
 -- keymap("n", "<leader>f", "<cmd>Telescope find_files<cr>", opts)
 keymap("n", "<leader>ff", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
@@ -85,6 +89,6 @@ keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
 
 -- Nvimtree
 keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
--- Toggle Terminal - Git/Htop
-keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
-keymap("n", "<C-1>", "<cmd>lua _HTOP_TOGGLE()<CR>", opts) -- dont use leader as you can't minimize
+-- Toggle Terminal - Git/Htop -- dont use leader as it conflicts with ijkl and you can't minimize
+keymap("n", "<C-2>", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
+keymap("n", "<C-1>", "<cmd>lua _HTOP_TOGGLE()<CR>", opts)
