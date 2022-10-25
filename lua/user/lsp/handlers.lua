@@ -88,6 +88,9 @@ M.on_attach = function(client, bufnr)
   lsp_keymaps(bufnr)
   lsp_highlight_document(client)
 end
+-- for rust-tools; cannot attach `on_attach` since it does not provide `client` arg;
+-- hence the above code which tries to call `client` fails
+M.lsp_keymaps = lsp_keymaps
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 
