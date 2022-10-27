@@ -51,6 +51,8 @@ return packer.startup(function(use)
   use "akinsho/toggleterm.nvim" -- terminal within nvim
   use "folke/which-key.nvim" -- keybinding popup 
   use "ggandor/leap.nvim" -- vim leap for faster moving  
+  use "gorbit99/codewindow.nvim" -- minimap
+
   -- Colorschemes
   use "navarasu/onedark.nvim"
   use "folke/tokyonight.nvim"
@@ -72,7 +74,8 @@ return packer.startup(function(use)
   use "neovim/nvim-lspconfig" -- enable LSP
   use "williamboman/mason.nvim" -- simple to use language server installer
   use "williamboman/mason-lspconfig.nvim" -- simple to use language server installer
-  use 'simrat39/rust-tools.nvim' -- extra Rust LSP features
+  use "simrat39/rust-tools.nvim" -- extra Rust LSP features
+  use "jj-hui/fidget.nvim" -- LSP progress UI
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"

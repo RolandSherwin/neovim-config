@@ -14,8 +14,8 @@ M.setup = function()
   end
 
   local config = {
-    -- disable virtual text
-    virtual_text = false,
+    -- virtual text, show the diagnostic in the same line
+    virtual_text = true,
     -- show signs
     signs = {
       active = signs,
@@ -64,7 +64,7 @@ local function lsp_keymaps(bufnr)
   local opts = { noremap = true, silent = true }
   vim.api.nvim_buf_set_keymap(bufnr, "n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "gh", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
+  vim.api.nvim_buf_set_keymap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
   -- shows the signature of a fn
   vim.api.nvim_buf_set_keymap(bufnr, "n", "gs", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
@@ -76,6 +76,9 @@ local function lsp_keymaps(bufnr)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>s", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
   -- opens diagnostic in a windw
   --vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>s", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
+  vim.api.nvim_buf_set_keymap(bufnr, "n", "1gd", "<cmd>lua vim.lsp.buf.type_definition()<cr>", opts)
+  vim.api.nvim_buf_set_keymap(bufnr, "n", "g0", "<cmd>lua vim.lsp.buf.document_symbol()<CR>", opts)
+  vim.api.nvim_buf_set_keymap(bufnr, "n", "gW", "<cmd>lua vim.lsp.buf.workspace_symbol()<CR>", opts)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "[d", '<cmd>lua vim.diagnostic.goto_prev({ border = "rounded" })<CR>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "]d", '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>', opts)
   vim.cmd [[ command! Format execute 'lua vim.lsp.buf.format {async = true}' ]]
